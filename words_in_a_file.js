@@ -6,9 +6,19 @@ function words_in_a_file(filename, limit) {
   let contents = fs.readFileSync(filename).toString();
   let arrContents = contents.match(/[a-z]+/gi);
   let countWords = {};
-  arrContents.forEach(key => {
-    (!countWords[key]) ? countWords[key] = 1 : countWords[key] += 1;
+
+  /*
+  arrContents.map(key => {
+    (!countWords.hasOwnProperty(key)) ? countWords[key] = 1 : countWords[key] += 1;
   });
+  let arrCountWords = Object.keys(countWords).map(key => {
+    return {
+      word: key,
+      total: countWords[key]
+    }
+  });
+  arrCountWords.sort((a,b) => b.total-a.total);*/
+
 
 }
 
