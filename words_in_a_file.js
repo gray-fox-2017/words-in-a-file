@@ -6,7 +6,7 @@ function words_in_a_file(filename, limit) {
   let source = fs.readFileSync(filename,'utf8');
   let conjunction = ["", "ref", "its", "a", "the", "an", "is", 'of','was','were','from','to','both','either','nor','as','these','which','with','who','whose','whom','on','at','are','in','it','also','between','for','and','nor','but','or','yet','so','after','although','if','because','before','by','in','that','though'];
   let filterWord = source.replace(/[^a-zA-Z ]/g, " ").split(" ");
-  let filterConjunction = filterWord.filter(value => conjunction.indexOf(value) === -1);
+  let filterConjunction = filterWord.filter(value => conjunction.indexOf(value.toLowerCase()) === -1);
   let resultObject = {};
   let arrayResult = [];
 
@@ -29,7 +29,7 @@ function words_in_a_file(filename, limit) {
   //return arrayResult;
 }
 
-words_in_a_file("source.txt", 3);
+words_in_a_file("source.txt", 5);
 
 module.exports = {
   words_in_a_file: words_in_a_file
