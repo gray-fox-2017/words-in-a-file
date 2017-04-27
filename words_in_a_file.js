@@ -11,7 +11,7 @@ function words_in_a_file(filename, limit) {
   let arrContents = unFilteredContents.filter(key => conjuctions.indexOf(key.toLowerCase()) === -1);
   let countWords = {}; //object to store counter
   let result = "";
-
+  
   // count occurences for each word
   arrContents.map(key => {
     (!countWords.hasOwnProperty(key)) ? countWords[key] = 1 : countWords[key] += 1;
@@ -30,7 +30,7 @@ function words_in_a_file(filename, limit) {
   for (let i=0; i<limit; i++) {
     result += "\'"+arrCountWords[i].word+"\': "+arrCountWords[i].total+" occurences\n";
   }
-
+  
   return result;
 
 }
