@@ -3,7 +3,7 @@ const fs = require('fs')
 
 function words_in_a_file(filename, limit) {
   // list of conjunctions
-  const conjuctions = ['a','after','also','although','an','and','are','as','at','because','before','between','both','but','by','either','for','from','if','in','is','it','nor','of','on','or','so','that','the','these','though','to','was','were','which','who','whom','whose','with','yet','ref'];
+  const conjuctions = ['a','after','also','although','an','and','are','as','at','because','before','between','both','but','by','either','for','from','if','in','is','it','nor','of','on','or','so','that','the','these','though','to','was','were','which','who','whom','whose','with','yet','ref','pp','set'];
 
   // read, filter, and convert file into an array
   let contents = fs.readFileSync(filename,'utf8');
@@ -35,7 +35,7 @@ function words_in_a_file(filename, limit) {
 
 }
 
-console.log(words_in_a_file('source.txt',3));
+console.log(words_in_a_file('source.txt',5));
 module.exports = {
   words_in_a_file: words_in_a_file
 }
